@@ -15,8 +15,8 @@ use it for passing anything you might create right on through.
 ## Change Log
 * **V2.x.x** - Updated Get() method so it will now throw an exception 
 on any error. Previously would return `null`. This has some implications on 
-error handeling when sending multiple queries. If any fail,
-an exception is now raised. See error handeling section. This is possibly a breaking change 
+error handling when sending multiple queries. If any fail,
+an exception is now raised. See error handling section. This is possibly a breaking change 
 from V1.
 * **v1.x.x** - Initial Release
 
@@ -436,8 +436,8 @@ This will generate a query that looks like this (well part of it anyway)
     }
 }
 ```
-### Handeling Errors
-**Getit version 2.X Error Handeling**
+### Handling Errors
+**Getit version 2.X Error Handling**
 Changed for version 2 onwards the Get() method will no longer return `null` 
 in response to error situations. For client errors, empty data or 
 any graphQL related errors an exception will be throw. Additional data based on 
