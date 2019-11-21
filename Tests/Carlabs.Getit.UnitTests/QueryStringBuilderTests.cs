@@ -29,6 +29,19 @@ namespace Carlabs.Getit.UnitTests
         }
 
         [TestMethod]
+        public void BuildQueryParam_LongType_ParseLong()
+        {
+            // Arrange
+            QueryStringBuilder queryString = new QueryStringBuilder();
+
+            // Act
+            string longStr = queryString.BuildQueryParam(43145123456L);
+
+            // Assert
+            Assert.AreEqual("43145123456", longStr);
+        }
+
+        [TestMethod]
         public void BuildQueryParam_QuotedStringType_ParseString()
         {
             // Arrange
@@ -98,6 +111,20 @@ namespace Carlabs.Getit.UnitTests
 
             // Assert
             Assert.AreEqual("[43783, 43784, 43145]", intListStr);
+        }
+
+        [TestMethod]
+        public void BuildQueryParam_LongListType_ParseLongList()
+        {
+            // Arrange
+            QueryStringBuilder queryString = new QueryStringBuilder();
+
+            // Act
+            List<long> longList    = new List<long>(new[] { 43783L, 43784L, 43145123456L });
+            string    intListStr = queryString.BuildQueryParam(longList);
+
+            // Assert
+            Assert.AreEqual("[43783, 43784, 43145123456]", intListStr);
         }
 
         [TestMethod]
