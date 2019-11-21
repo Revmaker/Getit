@@ -56,6 +56,9 @@ namespace Carlabs.Getit
                 case int intValue:
                     return intValue.ToString();
 
+                case long longValue:
+                    return longValue.ToString();
+
                 case float floatValue:
                     return floatValue.ToString(CultureInfo.CurrentCulture);
 
